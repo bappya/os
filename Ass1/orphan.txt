@@ -1,0 +1,32 @@
+#include <stdio.h>
+#include <sys/types.h>
+
+void main()
+{
+
+	pid_t pid;
+	
+	pid = fork();
+
+	if(pid == 0)
+	{
+
+		sleep(10);
+	
+		printf("\nIN CHILD PROCESS.....");
+		printf("\nChild process pid: %d", getpid());
+		printf("\nParent ID from child: %d",getppid());
+
+		
+	}
+	else
+	{
+		printf("\nIN PARENT PROCESS.....");
+		printf("\nParent id: %d \n", getpid());
+
+	//	sleep(3);
+	}
+	
+	
+
+}
